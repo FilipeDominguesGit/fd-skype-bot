@@ -5,9 +5,10 @@ before_script:
 - npm i -g mocha
 - npm i -g istanbul
 - npm i -g eslint
+- npm i -g nyc
 script:
 - npm run eslint
-- istanbul cover _mocha -- -R spec --recursive
+- nyc _mocha test
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 deploy:

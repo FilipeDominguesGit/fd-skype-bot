@@ -26,6 +26,7 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "mocha": "^3.5.3",
-    "node-schedule": "^1.2.5"
+    "node-schedule": "^1.2.5",
+    "nyc": "^11.3.0"
   }
 }
