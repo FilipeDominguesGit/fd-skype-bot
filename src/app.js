@@ -15,6 +15,7 @@ const ChuckNorrisService = require('./services/chucknorris');
 const rngHelper  = require('./helpers/rngHelper');
 const GiphyService = require('./services/giphy');
 const QuotesService = require('./services/quotes');
+const ImpraiseService = require('./services/impraise');
 //endregion
 
 //region api http clients
@@ -47,6 +48,7 @@ const giphy = new GiphyService(giphyHttpClient);
 const imgur = new ImgurService(imgurHttpClient);
 const chuckNorris = new ChuckNorrisService(chuckNorrisHttpClient);
 const quotes = new QuotesService();
+const impraise = new ImpraiseService();
 //endregions
 
 //region Dialogs
@@ -56,6 +58,7 @@ const HelpDialogHandler = require('./dialogs/help/helpDialogHandler');
 const ChuckNorrisDialogHandler = require('./dialogs/chucknorris/chuckNorrisDialogHandler');
 const GiphyDialogHandler = require('./dialogs/giphy/giphyDialogHandler');
 const QuotesDialogHandler = require('./dialogs/quotes/quotesDialogHandler');
+const ImpraiseDialogHandler = require('./dialogs/impraise/impraiseDialogHandler');
 const DialogsInstaller = require('./dialogs/dialogsInstaller');
 
 const handlers = [];
@@ -65,6 +68,7 @@ handlers.push( HelpDialogHandler());
 handlers.push( ChuckNorrisDialogHandler(chuckNorris,builder));
 handlers.push( GiphyDialogHandler(giphy,builder));
 handlers.push( QuotesDialogHandler(quotes));
+handlers.push( ImpraiseDialogHandler(impraise));
 
 
 /*default intentThreshold is 0.1
