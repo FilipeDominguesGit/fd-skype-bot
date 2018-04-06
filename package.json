@@ -21,6 +21,7 @@
     "axios": "^0.16.2",
     "body-parser": "^1.18.2",
     "botbuilder": "^3.14.1",
+    "botbuilder-azure": "^3.0.4",
     "express": "^4.16.3"
   },
   "devDependencies": {
