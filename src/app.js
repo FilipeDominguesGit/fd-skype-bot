@@ -83,14 +83,17 @@ dialogInstaller.Install(intents);
 //endregion
 
 //region bot setup
-const docDbClient = new azure.DocumentDbClient(configs.azure);
-const cosmosStorage = new azure.AzureBotStorage({ gzipData: false }, docDbClient);
+// const docDbClient = new azure.DocumentDbClient(configs.azure);
+
+// const cosmosStorage = new azure.AzureBotStorage({ gzipData: false }, docDbClient);
 const connector = new builder.ChatConnector({
   appId: process.env.MICROSOFT_APP_ID,
   appPassword: process.env.MICROSOFT_APP_PASSWORD
 });
 
-const bot = new builder.UniversalBot(connector).set('storage', cosmosStorage);
+const bot = new builder.UniversalBot(connector);
+//.set('storage', cosmosStorage);
+
 bot.dialog('/',intents);
 
 bot.on('conversationUpdate', function (message) {
